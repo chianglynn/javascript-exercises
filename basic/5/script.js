@@ -3,6 +3,8 @@ Basic Exercise 5
 Write a JavaScript program to rotate the string 'w3resource' in right direction by periodically removing one letter from the end of the string and attaching it to the front.
 */
 
+// Solution 1
+/*
 function stringRotate(id) {
     const p = document.getElementById(id);
     const stringNode = p.childNodes[0];
@@ -13,7 +15,19 @@ function stringRotate(id) {
         stringNode.data = string;
     }, 1000);
 }
+*/
 
+// Solution 2
+const stringEl = document.getElementById('string');
+let string = 'w3resource';
+
+stringRotate();
+
+function stringRotate() {
+    string = string[string.length - 1] + string.substring(0, string.length - 1);
+    stringEl.innerText = string;
+    setTimeout(stringRotate, 1000);
+}
 
 /*
 1. w3schoolsResource:
